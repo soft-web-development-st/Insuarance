@@ -1,0 +1,762 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-lime-green: #32CD32;
+    --background-blue: #00b2ee;
+    --title-black: black;
+    --font-white: white;
+    --paragrah-color-grey: #3A3B3C;
+    --orange-button: #fcac17;
+}
+
+
+
+body {
+    background-color: white;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.5;
+}  
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 85%;
+    max-width: 1400px;
+    margin: auto;
+    padding: 3rem 5rem;
+}
+
+.linebreak {
+    border-bottom: 1px solid #D3D3D3;
+    margin: 1rem 0;
+}
+
+/* Main */
+.main {
+    width: 100%;
+    height: 500px;
+    background: url('./images/main.jpg') no-repeat center;
+    position: relative;
+    background-size: 100% 100%;
+    border-radius: .1rem;
+    z-index: 1;
+}
+
+.main:after {
+    position: absolute;
+    content: '';
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.main-top-banner,
+.main-section-left,
+.main-section-right {
+    color: var(--font-white);
+    z-index: 2;
+}
+
+.main-top-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 0;
+}
+
+.main-top-banner h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+   
+}
+
+.main-top-banner h5 {
+    font-weight: 300;
+    color: var(--font-white);
+}
+
+
+.main-top-banner h5 span {
+    font-weight: 700;
+}
+
+.main-container {
+    width: 85%;
+    max-width: 1400px;
+    margin: auto;
+}
+
+.main-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+/*pop up form*/
+.main-section-right-pop{
+    width: 40%;
+    position: absolute;
+    position: fixed;
+    background: var(--primary-lime-green);
+    left: 50%;
+    padding: 1rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    z-index: 999;
+    top: 50%;
+   transform: translate(-50%, -50%) scale(0);
+   transition: 0.5s ease-in-out;
+   justify-content: center;
+
+}
+
+.close-form{
+    float: right;
+    right: 90px;
+    top: 15%;
+    cursor: pointer;
+    position: absolute;
+    position: fixed;
+    border: none;
+    background-color: transparent;
+    font-size: 30px;
+    color:var(--paragrah-color-grey);
+    z-index: 999;
+    visibility: hidden;
+
+}
+/*close button active*/
+ .show-closebtn{
+     visibility: visible;
+ }
+ /*pop up form active*/
+ .pop-up-form{
+   transform: translate(-50%, -50%) scale(1); 
+}
+/* overlay active*/
+
+
+
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(250, 249, 249, 0.8);
+    z-index: 1;
+    min-height: 100vh;
+    pointer-events: none;
+    display:none;
+    transition: .5s ease-in-out;
+
+}
+.active{
+display: block;
+pointer-events: all;
+}
+
+.main-section-right-pop p,h4{
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+}
+.q-btn{
+    cursor: pointer;
+    display:inline-block;
+    padding: 0.6250em 1.2500em;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 2px solid var(--primary-color-grey); 
+    color: var(--font-white);
+    background: var(--orange-button);
+    border-radius: 500px;
+    text-align: center;
+    margin-top: .7rem;
+}
+
+
+/*end of pop up form */
+
+
+
+
+
+
+
+.main-section-right-pop h4{
+    font-size: 1.5rem;
+    color: white;
+}
+
+.main-section-left {
+     margin-right: 9rem;
+}
+
+.main-section-left h3, 
+.offer h3 {
+    font-size: 2.5rem;
+    line-height: 3rem;
+}
+
+.main-section-left p {
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 2rem;
+}
+
+.main-section-left a {
+    display: none;
+}
+
+.main-section-right {
+    background-color: var(--primary-lime-green);
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+}
+
+.main-section-right h4, 
+.main-section-right p {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.main-section-right h4 {
+    font-size: 1.5rem;
+}
+
+.main-section-right p {
+    font-size: .8rem;
+    margin: .5rem 0;
+}
+
+.main-form .form-control {
+    margin: .5rem 0;
+}
+
+.main-form input[type='text'],
+.main-form input[type='email'],
+.main-form input[type='tel'],
+.main-form textarea {
+    border: 0;
+    box-shadow: 0 0 4px #ccc;; 
+    width: 100%;
+    padding: 3px;
+}
+
+.main-form input::placeholder,
+.main-form textarea::placeholder  {
+    font-size: .7rem;
+    font-family: sans-serif;
+    color: lightgrey;
+}
+
+.main-form input[type='submit'] {
+    width: 100%;
+    background-color: black;
+    color: var(--font-white);
+    border: 0;
+    padding: 4px 0;
+    cursor: pointer;
+}
+
+/* Guarantee */
+.guarantee,
+.helped-people {
+    background-color: var(--background-blue);
+    color: var(--font-white);
+}
+
+.guarantee-contents, 
+.helped-people {
+    text-align: center;
+}
+
+.guarantee-contents h3,
+.over-fifties h3,
+.buy-today h3,
+.coverage h3,
+.helped-people h3,
+.faq h3 {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.guarantee-contents h3,
+.coverage h3 {
+    line-height: 2rem;
+}
+
+.guarantee-contents h5, 
+.whole-life-info h5,
+.benefit h5,
+.coverage-info h5 {
+    font-size: .9rem;
+}
+
+.guarantee-contents h5 span {
+    font-size: .7rem;
+}
+
+.guarantee-contents p {
+    padding: 1rem 0;
+}
+
+.guarantee-contents p, 
+.whole-life-info p,
+.benefit p,
+.coverage-info p {
+    font-size: .8rem;
+}
+
+.guarantee-contents p,
+.helped-people p,
+.footer p {
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Over Fiftys */
+.over-fifties h3,
+.coverage h3,
+.faq h3 {
+    color: var(--title-black);
+}
+
+.over-fifties h3:last-of-type,
+.buy-today h3,
+.coverage h3,
+.faq h3 {
+    margin-bottom: 2.5rem;
+}
+
+.whole-life-benefits, 
+.coverage-benefits {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 46.875rem;
+}
+
+.whole-life-video iframe,
+.coverage-pic img {
+    height: 16rem;
+    width: 18rem;
+    box-shadow: 0 0 3px var(--paragrah-color-grey);
+}
+
+.whole-life-video,
+.coverage-pic {
+    margin: 0 auto;
+}
+
+.whole-life-info h5,
+.coverage-info h5 {
+    color: var(--background-blue);
+}
+
+.whole-life-info p,
+.coverage-info p,
+.footer p {
+    color: var(--paragrah-color-grey);
+    margin: 1rem 0;
+}
+
+.whole-life-info a,
+.coverage-benefits a,
+.offer a {
+    cursor: pointer;
+    display:inline-block;
+    padding: 0.6250em 1.2500em;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 2px solid var(--primary-color-grey); 
+    color: var(--font-white);
+    background: var(--orange-button);
+    border-radius: 500px;
+    text-align: center;
+    margin-top: .7rem;
+}
+
+/* Buy Today */
+.buy-today {
+    background-color: var(--primary-lime-green);
+    color: var(--font-white);
+}
+
+.buy-today-benefits {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    text-align: center;
+    max-width: 900px;
+    margin: auto;
+}
+
+.buy-today-benefits h5 {
+    margin: 1rem 0;
+}
+
+.buy-today-benefits h5,
+.helped-people h5 {
+    text-transform: uppercase;
+}
+
+/* Helped */
+.helped-people i {
+    margin: 1.2rem 0;
+}
+
+.helped-people h5 {
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+.helped-people p {
+    font-size: .9rem;
+    padding: 1rem 0;
+}
+
+/* FAQ */
+.questions-answers {
+    max-width: 700px;
+    margin: auto;
+}
+
+.question {
+    display: flex;
+    justify-content: space-between;
+}
+
+.question-answer p,
+.footer p {
+    font-size: .8rem;
+}
+
+.question p {
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.icon{
+    color: #00b2ee;
+}
+
+.question-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+.question-btn:hover{
+    color: gray ;
+    
+}
+/* hide text*/
+.answer{
+    display: none;
+    padding: 5px;
+    background:whitesmoke;
+    opacity: 1;
+    border-radius: 10px;
+}
+.show-answer .answer {
+    display: block;
+    transition: 0.5s;
+}
+.show-answer .arrow-up{
+    display: inline;
+    transition: 0.5s;
+}
+.show-answer .arrow-down{
+    display: none;
+   transition: 0.5s;
+}
+.arrow-up{
+    display: none;
+    transition: 0.5s;
+}
+.show-btn{
+    display: inline ;
+}
+
+
+
+.answer p {
+    color: var(--paragrah-color-grey);
+    line-height: 1rem;
+}
+
+/* Offer */
+.offer {
+    width: 100%;
+    height: 600px;
+    background: url('./images/lady-children.jpg') no-repeat center;
+    position: relative;
+    display: flex;
+    background-size: 100% 100%;
+    border-radius: .1rem;
+    z-index: 1;
+    text-align: center;
+    margin: auto;
+}
+
+.offer:after {
+    position: absolute;
+    content: '';
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.offer h3 {
+    color: var(--font-white);
+
+}
+
+.offer h3:nth-child(2) {
+    margin: 1rem;
+}
+
+.offer h3 span {
+    font-size: 1.5rem;
+    vertical-align: top;
+    line-height: 30px;
+    height: 15px;
+    font-weight: 300;
+}
+
+.offer h3, 
+.offer a {
+    z-index: 2;
+}
+
+.offer a {
+    margin-top: 3.5rem;
+}
+
+/* Footer */
+.footer-container {
+    padding: 1.5rem 5rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer p:first-child {
+    font-size: .6rem;
+    margin-bottom: 1rem;
+}
+
+.footer p {
+    text-align: center;
+}
+
+.footer p span {
+    color: var(--background-blue);
+    font-weight: 500;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 3rem 1rem;
+    }
+
+    /* Main */
+    .main {
+        height: 450px;
+    }
+ 
+    .main-section {
+        margin-top: 0;
+        padding: 0 1rem;
+    }
+
+    .main-section-left {
+        margin-right: 2rem;
+    }
+    
+    .main-section-left h3, 
+    .offer h3 {
+        font-size: 2rem;
+        line-height: 2.5rem;
+    }
+
+    /* Over Fifties */
+    .over-fifties h3,
+    .coverage h3 {
+        line-height: 1.7rem;
+    }
+
+    .over-fifties h3:last-of-type,
+    .buy-today h3,
+    .coverage h3,
+    .faq h3 {
+        margin-bottom: 1rem;
+    }
+
+    .whole-life-video iframe,
+    .coverage-pic img {
+        height: 14rem;
+        width: 17rem;
+    }
+
+    /* Helped */
+    .helped-people i {
+        margin: .8rem 0;
+    }
+
+    .helped-people h5 {
+        margin-top: .5rem;
+    }
+    /* Offer */
+    .offer {
+        height: 400px;
+    }
+
+    .offer a {
+        margin-top: 2.5rem;
+    }
+}   
+
+@media screen and (max-width: 414px) {
+    .container {
+        width: 93%;
+        padding: 1.5rem 0;
+    }
+
+    /* Main */
+    .main-top-banner h4 {
+        font-size: 1rem;
+    }
+
+    .main-top-banner h5 {
+        font-size: .7rem;
+    }
+
+    .main {
+        height: 350px;
+    }
+
+    .main-section-left {
+        margin-right: 0;
+        margin-top: 2rem;
+        text-align: center;
+    }
+
+    .main-section-left h3,
+    .offer h3 {
+        font-weight: 500;
+    }
+
+    .main-section-left p {
+        font-weight: 300;
+    }
+
+    .main-section-left a {
+        cursor: pointer;
+        display:inline-block;
+        padding: 0.6250em 1.2500em;
+        font-size: 1rem;
+        font-weight: bold;
+        border: 2px solid var(--primary-color-grey); 
+        color: var(--font-white);
+        background: var(--orange-button);
+        border-radius: 500px;
+        text-align: center;
+        margin-top: .7rem;
+    }
+
+    .main-section-right {
+        display: none;
+    }
+    
+    .main-section p {
+        margin: .5rem 0;
+    }
+
+    /* Guarantee */
+    .guarantee-contents h3, 
+    .over-fifties h3, 
+    .buy-today h3, 
+    .coverage h3, 
+    .helped-people h3, 
+    .faq h3 {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .guarantee-contents p, 
+    .whole-life-info p, 
+    .benefit p, 
+    .coverage-info p {
+        font-size: .7rem;
+    }
+
+    .guarantee-contents p {
+        padding: .5rem 0;
+    }
+
+    /* Over Fifties */
+    .over-fifties h3,
+    .coverage h3 {
+        line-height: 1.5rem;
+    }
+
+    /* Buy */
+    .whole-life-benefits, 
+    .coverage-benefits,
+    .buy-today-benefits {
+        grid-template-columns: 1fr;   
+    }
+
+    .whole-life-info,
+    .coverage-info {
+        text-align: center;
+    }
+
+    .whole-life-info p, 
+    .coverage-info p, 
+    .footer p {
+        margin: .5rem 0;
+    }
+
+    .whole-life-video iframe,
+    .coverage-pic img {
+        height: 12rem;
+        width: 15rem;
+    }
+
+    /* Offer */
+    .offer {
+        height: 300px;
+    }
+
+    .offer h3:nth-child(2) {
+        margin: 0;
+    }
+
+    /* Footer */
+    .footer-container {
+        padding: 1.5rem 1rem;
+    }
+}
